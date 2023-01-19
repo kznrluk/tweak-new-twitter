@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Tweak New Twitter",
+  "description": "Remove algorithmic content from Twitter, hide news & trends, control which shared tweets appear on your timeline, and improve the UI",
+  "homepage_url": "https://github.com/insin/tweak-new-twitter/",
+  "version": "2.22.0",
+  "icons": {
+    "48": "icon48.png",
+    "96": "icon96.png",
+    "128": "icon128.png",
+    "256": "icon256.png",
+    "512": "icon512.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*",
+        "https://mobile.twitter.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://twitter.com/*",
+        "https://mobile.twitter.com/*"
+      ],
+      "resources": [
+        "tweak-new-twitter.user.js"
+      ]
+    }
+  ],
+  "options_ui": {
+    "browser_style": true,
+    "page": "options.html"
+  },
+  "action": {
+    "default_title": "Tweak New Twitter",
+    "default_popup": "browser_action.html",
+    "default_icon": {
+      "16": "toolbar-icon16.png",
+      "19": "toolbar-icon19.png",
+      "32": "toolbar-icon32.png",
+      "38": "toolbar-icon38.png",
+      "48": "toolbar-icon48.png",
+      "72": "toolbar-icon72.png"
+    }
+  },
+  "permissions": [
+    "storage"
+  ]
+}
